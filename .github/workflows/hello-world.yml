@@ -1,0 +1,17 @@
+name: learn-github-actions
+on: [push]
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: write greeting to txt
+        run: echo "Hello, world!" > test.txt
+
+      - name: check that the txt exists
+        run: ls -la
+
+      - name: greet
+        run: cat test.txt
